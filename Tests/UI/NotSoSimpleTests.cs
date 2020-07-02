@@ -1,13 +1,13 @@
-﻿using UI.Pages.Home;
-using UI.Pages.Widgets;
-using UI.Tests.Base;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using Tests.Base;
+using UI.Pages.Home;
+using UI.Pages.Widgets;
 
-namespace UI.Tests.PageTests
+namespace Tests.UI
 {
     [TestFixture]
-    class NotSoSimpleTests : BaseTest
+    class NotSoSimpleTests : BaseUiTest
     {
         private const string FullDate = "11/11/2018";
         private const string Medium = "Medium";

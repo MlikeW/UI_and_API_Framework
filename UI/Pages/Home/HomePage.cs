@@ -1,15 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using UI.Driver;
 using UI.Pages.Base;
 using UI.Pages.Base.CommonParts;
 using UI.Pages.Interactions;
 using UI.Pages.Widgets;
-using NUnit.Framework;
-using OpenQA.Selenium;
 
 namespace UI.Pages.Home
 {
-    class HomePage : BasePage
+    public class HomePage : BasePage
     {
         protected override string PageName { get; set; } = PageNames.HomePageName;
 

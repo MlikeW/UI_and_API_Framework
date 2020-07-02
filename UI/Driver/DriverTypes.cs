@@ -1,4 +1,4 @@
-﻿namespace UI.Pages.Base.Config
+﻿namespace UI.Driver
 {
     public enum DriverTypes
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace API.Sender
+namespace API.SenderMethods
 {
     public enum ContentTypes
     {

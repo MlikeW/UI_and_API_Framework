@@ -1,12 +1,13 @@
-﻿using UI.Pages.Base;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using UI.Driver;
+using UI.Pages.Base;
 using UI.Pages.Base.CommonParts;
 using UI.Pages.Home;
-using NUnit.Framework;
-using OpenQA.Selenium;
 
 namespace UI.Pages.Interactions
 {
-    class InteractionsPage : BasePage
+    public class InteractionsPage : BasePage
     {
         protected override string PageName { get; set; } = PageNames.InteractionsPageName;
 

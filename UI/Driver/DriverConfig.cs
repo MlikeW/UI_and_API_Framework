@@ -1,17 +1,18 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 
-namespace UI.Pages.Base.Config
+namespace UI.Driver
 {
-    class DriverConfig
+    public class DriverConfig
     {
         public static IWebDriver GetDriver(DriverTypes driverName)
             => driverName switch
             {
-                DriverTypes.Chrome => (IWebDriver) new ChromeDriver(),
+                DriverTypes.Chrome => new ChromeDriver(),
                 DriverTypes.Firefox => new FirefoxDriver(),
-                _ => new ChromeDriver()
+                _ => throw new NotImplementedException("There is no such driver in project.")
             };
 
         }

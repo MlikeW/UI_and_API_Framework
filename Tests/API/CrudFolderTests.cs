@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using API.Endpoints;
+﻿using API.Endpoints;
 using NUnit.Framework;
+using System;
 using System.Linq;
 using System.Threading;
+using Tests.Base;
 
-namespace API.Tests
+namespace Tests.API
 {
     [TestFixture]
-    internal class CrudFolderTests : BaseTest
+    internal class CrudFolderTests : BaseApiTest
     {
         private readonly string _folderName = $"TestFolder{Guid.NewGuid()}";
         private readonly User _user = new User(Send);
@@ -41,19 +41,7 @@ namespace API.Tests
         {
             _user.CreateFolder(_folderName);
             _folder.DeleteCurrentFolder(_user.GetCurrentUserInfo().login, _folderName);
-            Thread.Sleep(1000);
-            Assert.IsFalse(_user.GetAllFolders()
-                .Any(folder => folder.name.Equals(_folderName)));
-        }
-
-        [Test]
-        public void CreateAndDeleteFolder()
-        {
-            _user.CreateFolder(_folderName);
-            Assert.IsTrue(_user.GetAllFolders()
-                .Any(folder => folder.name.Equals(_folderName)));
-            _folder.DeleteCurrentFolder(_user.GetCurrentUserInfo().login, _folderName);
-            Thread.Sleep(1000);
+            Thread.Sleep(1000);//avoid (try catch)
             Assert.IsFalse(_user.GetAllFolders()
                 .Any(folder => folder.name.Equals(_folderName)));
         }

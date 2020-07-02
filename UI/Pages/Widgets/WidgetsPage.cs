@@ -3,10 +3,11 @@ using UI.Pages.Base.CommonParts;
 using UI.Pages.Home;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using UI.Driver;
 
 namespace UI.Pages.Widgets
 {
-    class WidgetsPage : BasePage
+    public class WidgetsPage : BasePage
     {
         protected override string PageName { get; set; } = PageNames.WidgetsPageName;
 

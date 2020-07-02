@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Net;
-using NUnit.Framework;
 
-namespace API.Sender
+namespace API.SenderMethods
 {
     public class Sender
     {
@@ -71,8 +70,11 @@ namespace API.Sender
 
             var response = (HttpWebResponse)request.GetResponse();
 
-            Assert.AreEqual(expectedStatusCode, response.StatusCode, "Received incorrect status code.");
-            
+            if(!expectedStatusCode.Equals(response.StatusCode))
+            {
+                throw new Exception("Received incorrect status code.");
+            }
+
             var responseString = new StreamReader(response.GetResponseStream() ?? throw new InvalidOperationException()).ReadToEnd();//check why not to string
             Console.WriteLine($"---Send {request.Method} to {endpointFinalUrl}: \n{responseString}");
 

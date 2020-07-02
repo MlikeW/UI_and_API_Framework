@@ -1,18 +1,14 @@
-﻿using System;
-using CommonUtilities.Methods;
-using UI.Pages.Base;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using Tests.Base;
 using UI.Pages.Home;
 using UI.Pages.Interactions;
 using UI.Pages.Widgets;
-using UI.Tests.Base;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 
-namespace UI.Tests.PageTests
+namespace Tests.UI
 {
     [TestFixture]
-    class SimpleTests : BaseTest
+    class SimpleTests : BaseUiTest
     {
         private HomePage _homePage;
         private InteractionsPage _interactionsPage;

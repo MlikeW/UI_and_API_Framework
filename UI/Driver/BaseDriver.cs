@@ -1,9 +1,9 @@
-﻿using CommonUtilities.Methods;
+﻿using System;
+using CommonUtilities.Methods;
 using CommonUtilities.Methods.CustomAttributes;
 using OpenQA.Selenium;
-using System;
 
-namespace UI.Pages.Base
+namespace UI.Driver
 {
     public  static class BaseDriver
     {

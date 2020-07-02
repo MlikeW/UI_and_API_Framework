@@ -3,11 +3,10 @@ using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
-using System.IO.Packaging;
 using System.Linq;
 using System.Net;
 
-namespace API.Sender
+namespace API.SenderMethods
 {
     public static class RequestMethods
     {

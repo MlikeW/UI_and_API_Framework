@@ -1,8 +1,9 @@
 ﻿using System.IO;
+using API.SenderMethods;
 
 namespace API.Endpoints
 {
-    internal abstract class BaseEndpoint
+    public abstract class BaseEndpoint
     {
         protected abstract string MainPoint { get; }
 
@@ -10,8 +11,8 @@ namespace API.Endpoints
 
         protected string GetChildPoint(params string[] childPoint) => GetSingleChildPoint(Path.Combine(childPoint));
 
-        protected Sender.Sender Send;
+        protected Sender Send;
 
-        protected BaseEndpoint(Sender.Sender send) => Send = send;
+        protected BaseEndpoint(Sender send) => Send = send;
     }
 }

@@ -4,7 +4,7 @@ using static System.String;
 
 namespace UI.Pages.Base
 {
-    abstract class BasePage
+    abstract public class BasePage
     {
         private const string CommonPageLocator = ".//*[contains(@class,'entry-title') and contains(text(),'{0}')]";
         protected abstract string PageName { get; set; }

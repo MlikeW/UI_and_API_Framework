@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using API.SenderMethods;
 
 namespace API.Endpoints
 {
-    internal class User : BaseEndpoint
+    public class User : BaseEndpoint
     {
         protected override string MainPoint { get; } = "user";
         private string ReposPoint => GetChildPoint("repos");
 
-        public User(Sender.Sender send) : base(send)
+        public User(Sender send) : base(send)
         {
         }
 

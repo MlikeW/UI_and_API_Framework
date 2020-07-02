@@ -1,11 +1,12 @@
 ﻿using UI.Pages.Base;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using UI.Driver;
 using static System.String;
 
 namespace UI.Pages.Widgets
 {
-    class SelectmenuPage : BasePage
+    public class SelectmenuPage : BasePage
     {
         private enum SelectmenuFields
         {
