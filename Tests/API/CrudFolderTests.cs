@@ -1,6 +1,7 @@
 ﻿using API.Endpoints;
 using NUnit.Framework;
 using System;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using Tests.Base;
@@ -41,7 +42,7 @@ namespace Tests.API
         {
             _user.CreateFolder(_folderName);
             _folder.DeleteCurrentFolder(_user.GetCurrentUserInfo().login, _folderName);
-            Thread.Sleep(1000);//avoid (try catch)
+            Thread.Sleep(1000);//todo: avoid (try catch)
             Assert.IsFalse(_user.GetAllFolders()
                 .Any(folder => folder.name.Equals(_folderName)));
         }

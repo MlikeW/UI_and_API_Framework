@@ -9,7 +9,7 @@ namespace API.Endpoints
 
         private string GetSingleChildPoint(string childPoint) => Path.Combine(MainPoint, childPoint);//todo: ?
 
-        protected string GetChildPoint(params string[] childPoint) => GetSingleChildPoint(Path.Combine(childPoint));
+        protected string GetChildPoint(params string[] childPoint) => GetSingleChildPoint(Path.Combine(childPoint)).Replace("\\", "/");//todo: *own method without replace
 
         protected Sender Send;
 

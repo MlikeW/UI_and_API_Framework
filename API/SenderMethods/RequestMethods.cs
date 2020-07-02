@@ -39,10 +39,10 @@ namespace API.SenderMethods
                 _ => responseString
             };
 
-        private static void AddHeader(this HttpWebRequest request, HttpRequestHeader header, string value)
+        private static void AddHeader(this WebRequest request, HttpRequestHeader header, string value)
             => request?.Headers.Add(header, value);
 
-        private static string ToStringByContentType(this object body, HttpWebRequest request, ContentTypes type)
+        private static string ToStringByContentType(this object body, WebRequest request, ContentTypes type)
         {
             var content = type switch
             {
@@ -54,7 +54,7 @@ namespace API.SenderMethods
             return content;
         }
 
-        private static void ApplyContentHeaders(this HttpWebRequest request, ContentTypes contentType, string content)
+        private static void ApplyContentHeaders(this WebRequest request, ContentTypes contentType, string content)
         {
             request.ContentType = contentType.GetEnumSinglePropertyValue<DescriptionAttribute>();
             request.ContentLength = content.Length;

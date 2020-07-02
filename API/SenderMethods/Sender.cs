@@ -61,7 +61,7 @@ namespace API.SenderMethods
             request.AddHeaders(headers);
             request.Method = requestType.ToString();
 
-            if (body != (null))//todo: avoid partial parameters to url(ignoring during convertation)
+            if (body != null)//todo: avoid partial parameters to url(ignoring during convertation)
             {
                 var content = body.ToBytesByContentType(request, contentType);
                 using var stream = request.GetRequestStream();
